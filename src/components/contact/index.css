@@ -1,0 +1,46 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contact__top {
+    display: flex;
+    gap: 20px;
+}
+
+.contact__img {
+    border-radius: 50%;
+}
+
+.contact__title {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact__title-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+}
+
+.contact__title-sub-block {
+    display: flex;
+    gap: 16px;
+}
+
+.contact__title-sub-value {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.contact__title-sub-value:not(:last-child)::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 4px;
+    border-radius: 4px;
+    background-color: #000;
+}

@@ -1,3 +1,18 @@
+
+import Page from './components/page'
+import Header from './components/header';
+import Title from './components/title';
+import Photo from './components/photo';
+import Price from './components/price';
+import RoomList from './components/room-list';
+import Description from './components/description';
+import RoomDetails from './components/room-details';
+import Amenities from './components/amenities';
+import Additional from './components/additional';
+import NearBy from './components/nearby';
+import GuestReviews from './components/guestReviews';
+import Contact from './components/contact';
+
 function App() {
   const data = {
     listing_name: "Іст-Сайд Біл",
@@ -144,7 +159,42 @@ function App() {
     ],
   };
 
-  return <div>Hello World</div>;
+  return (
+    <Page>
+      <Header />
+      <Title
+        title={data.listing_name}
+        rating={data.reviews_summary.average_rating}
+        review={data.reviews_summary.total_reviews}
+        city={data.location.city}
+        country={data.location.country}
+        superhost={data.superhost} />
+      <Photo src={data.image} name={data.listing_name} />
+      <Price
+        price={data.price.original_price}
+        discount={data.price.discounted_price}
+        currency={data.price.currency}
+        cleaning={data.price.cleaning_fee}
+        service={data.price.service_fee}
+        checkin={data.availability.checkin_date}
+        checkout={data.availability.checkout_date} />
+      <RoomList list={data.roomTypes} />
+      <Description title={'Опис'} children={data.description} />
+      <RoomDetails
+        guests={data.property_details.guests}
+        bedrooms={data.property_details.bedrooms}
+        beds={data.property_details.beds}
+        baths={data.property_details.baths} />
+      <Description title={'Про сусідів'} children={data.neighborhood_info} />
+      <Amenities amenities={data.amenities} />
+      <Contact dat={data.contact_info} />
+      <Additional add={data.additional_properties} />
+      <GuestReviews list={data.guestReviews} />
+      <NearBy dat={data.nearbyAttractions} />
+    </Page>
+
+  )
+
 }
 
 export default App;

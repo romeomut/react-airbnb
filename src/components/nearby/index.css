@@ -1,0 +1,13 @@
+.nearby,
+.nearby__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.nearby__link {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration-line: underline;
+}
